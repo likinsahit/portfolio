@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of D Likin Sahit, QA Engineer specializing in Selenium, Java, BDD Cucumber, Rest Assured, Playwright, and API automation."
+    />
+    <title>D Likin Sahit | QA Automation Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+        <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+        <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+        <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+      </symbol>
+      <symbol id="icon-file" viewBox="0 0 24 24">
+        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
+        <path d="M14 3v5h5"></path>
+        <path d="M9 13h6"></path>
+        <path d="M9 17h4"></path>
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="M20 6 9 17l-5-5"></path>
+      </symbol>
+      <symbol id="icon-code" viewBox="0 0 24 24">
+        <path d="m16 18 6-6-6-6"></path>
+        <path d="m8 6-6 6 6 6"></path>
+        <path d="m14 4-4 16"></path>
+      </symbol>
+      <symbol id="icon-api" viewBox="0 0 24 24">
+        <path d="M4 7h6"></path>
+        <path d="M14 7h6"></path>
+        <path d="M10 7a2 2 0 1 0 4 0 2 2 0 0 0-4 0"></path>
+        <path d="M4 17h3"></path>
+        <path d="M17 17h3"></path>
+        <path d="M7 17a5 5 0 0 1 10 0"></path>
+      </symbol>
+      <symbol id="icon-browser" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+        <path d="M3 9h18"></path>
+        <path d="M8 15h8"></path>
+      </symbol>
+      <symbol id="icon-release" viewBox="0 0 24 24">
+        <path d="M12 3 4 7v6c0 5 3.4 7.5 8 8 4.6-.5 8-3 8-8V7z"></path>
+        <path d="m9 12 2 2 4-4"></path>
+      </symbol>
+      <symbol id="icon-tools" viewBox="0 0 24 24">
+        <path d="M14.7 6.3a4 4 0 0 0-5 5L4 17v3h3l5.7-5.7a4 4 0 0 0 5-5l-2.4 2.4-3-3z"></path>
+      </symbol>
+      <symbol id="icon-award" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="5"></circle>
+        <path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5"></path>
+      </symbol>
+      <symbol id="icon-briefcase" viewBox="0 0 24 24">
+        <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+        <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path>
+        <path d="M3 12h18"></path>
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+        <path d="m3 7 9 6 9-6"></path>
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"></path>
+      </symbol>
+    </svg>
+    <canvas class="particle-field" aria-hidden="true"></canvas>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="ambient-bg" aria-hidden="true">
+      <span class="orb orb-one"></span>
+      <span class="orb orb-two"></span>
+      <span class="orb orb-three"></span>
+      <span class="grid-glow"></span>
+    </div>
+
+    <header class="site-header">
+      <div class="header-shell">
+        <a class="brand hoverable" href="#home" aria-label="D Likin Sahit home">
+          <span class="brand-mark">DL</span>
+          <span>
+            <strong>D Likin Sahit</strong>
+            <small>QA Automation Engineer</small>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a class="hoverable" href="#about">About</a>
+          <a class="hoverable" href="#expertise">Expertise</a>
+          <a class="hoverable" href="#projects">Projects</a>
+          <a class="hoverable" href="#experience">Experience</a>
+          <a class="hoverable" href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle hoverable" type="button" aria-label="Toggle theme">
+            <span aria-hidden="true">☾</span>
+          </button>
+          <a class="btn btn-primary compact hoverable" href="assets/likin-sahit-resume.pdf" target="_blank" rel="noreferrer">
+            <svg class="icon"><use href="#icon-file"></use></svg>
+            Resume
+          </a>
+          <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <main id="home">
+      <section class="hero section-shell">
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          Quality assured - available for opportunities
+        </div>
+        <h1>
+          QA Automation Engineer.
+          <span>Testing That Protects.</span>
+        </h1>
+        <p class="hero-copy">
+          6.10 years of experience helping teams release safer products through
+          Selenium, Java, BDD Cucumber, Rest Assured API testing, and Playwright
+          automation.
+        </p>
+        <div class="recruiter-strip" aria-label="Recruiter highlights">
+          <span><svg class="icon"><use href="#icon-check"></use></svg> Immediate QA impact</span>
+          <span><svg class="icon"><use href="#icon-release"></use></svg> Release-ready automation</span>
+          <span><svg class="icon"><use href="#icon-briefcase"></use></svg> Banking and insurance domain</span>
+        </div>
+        <blockquote>
+          "I turn complex product workflows into reliable test coverage, faster
+          releases, and cleaner defect feedback for engineering teams."
+        </blockquote>
+        <div class="hero-lab" aria-label="Automation stack preview">
+          <div class="lab-card">
+            <span>Automation Pipeline</span>
+            <strong>BDD + API + UI</strong>
+            <div class="pipeline">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+          <div class="lab-card">
+            <span>Quality Signal</span>
+            <strong>Stable release gates</strong>
+            <div class="signal-bars">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+          <div class="floating-chip chip-one">Selenium</div>
+          <div class="floating-chip chip-two">Playwright</div>
+          <div class="floating-chip chip-three">Rest Assured</div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary hoverable" href="#projects">
+            <svg class="icon"><use href="#icon-grid"></use></svg>
+            View Projects
+          </a>
+          <a class="btn btn-secondary hoverable" href="assets/likin-sahit-resume.pdf" target="_blank" rel="noreferrer">
+            <svg class="icon"><use href="#icon-file"></use></svg>
+            Preview Resume
+          </a>
+        </div>
+        <div class="stats-grid" aria-label="Career highlights">
+          <div>
+            <strong>6.10</strong>
+            <span>Years QA Experience</span>
+          </div>
+          <div>
+            <strong>80%</strong>
+            <span>Regression Effort Reduced</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>Enterprise Projects</span>
+          </div>
+          <div>
+            <strong>3+</strong>
+            <span>Automation Frameworks</span>
+          </div>
+        </div>
+        <a class="scroll-link hoverable" href="#about">Scroll ↓</a>
+      </section>
+
+      <section id="about" class="section-shell about-section">
+        <div class="section-heading">
+          <p>About Me</p>
+          <h2>Quality engineering from requirement analysis to release confidence.</h2>
+        </div>
+        <div class="about-layout">
+          <div class="about-cards">
+            <article>
+              <span>Core Experience</span>
+              <strong>Manual + Automation QA</strong>
+            </article>
+            <article>
+              <span>Recent Focus</span>
+              <strong>Playwright + TypeScript</strong>
+            </article>
+            <article>
+              <span>Domain Exposure</span>
+              <strong>Banking, Insurance, Ecommerce</strong>
+            </article>
+          </div>
+          <div class="about-copy">
+            <p>
+              I am D Likin Sahit, a QA Engineer based in Hyderabad with deep
+              hands-on experience in functional testing, system integration testing,
+              regression testing, end-to-end testing, API testing, defect triage, and
+              automation framework development.
+            </p>
+            <p>
+              I have worked across Agile and Waterfall delivery models, owning test
+              case design, execution, automation scripts, bug reporting, retesting,
+              sprint release validation, and CI/CD-friendly automation suites.
+            </p>
+            <div class="focus-strip">
+              <span>BDD Cucumber</span>
+              <span>Page Object Model</span>
+              <span>Rest Assured</span>
+              <span>Cross-browser Testing</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="expertise" class="expertise-section">
+        <div class="section-shell">
+          <div class="section-heading centered">
+            <p>Technical Expertise</p>
+            <h2>Core competencies across QA automation, API testing, and delivery tools.</h2>
+          </div>
+          <div class="cards-grid">
+            <article class="skill-card">
+              <div class="card-icon"><svg class="icon"><use href="#icon-browser"></use></svg></div>
+              <h3>Selenium Automation</h3>
+              <p>WebDriver automation using Java, TestNG, Page Object Model, Page Factory, and hybrid frameworks.</p>
+              <div class="tag-list">
+                <span>Selenium</span><span>Java</span><span>TestNG</span><span>POM</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="card-icon"><svg class="icon"><use href="#icon-check"></use></svg></div>
+              <h3>BDD Frameworks</h3>
+              <p>Feature files, scenarios, scenario outlines, acceptance criteria, and Cucumber-based collaboration.</p>
+              <div class="tag-list">
+                <span>Cucumber</span><span>Gherkin</span><span>BDD Studio</span><span>Jira</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="card-icon"><svg class="icon"><use href="#icon-api"></use></svg></div>
+              <h3>API & Backend Testing</h3>
+              <p>API validation using Rest Assured, Postman, Swagger, and backend verification through SQL queries.</p>
+              <div class="tag-list">
+                <span>Rest Assured</span><span>Postman</span><span>Swagger</span><span>SQL</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="card-icon"><svg class="icon"><use href="#icon-code"></use></svg></div>
+              <h3>Playwright Automation</h3>
+              <p>Reusable Playwright suites for Chromium, Firefox, and WebKit with TypeScript and JavaScript.</p>
+              <div class="tag-list">
+                <span>Playwright</span><span>TypeScript</span><span>JavaScript</span><span>HTML Reports</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="card-icon"><svg class="icon"><use href="#icon-release"></use></svg></div>
+              <h3>Release Quality</h3>
+              <p>Smoke, sanity, regression, SIT, E2E, retesting, defect follow-up, and release status reporting.</p>
+              <div class="tag-list">
+                <span>Regression</span><span>SIT</span><span>E2E</span><span>HP ALM</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="card-icon"><svg class="icon"><use href="#icon-tools"></use></svg></div>
+              <h3>Dev Tools</h3>
+              <p>Daily delivery workflows with GitHub, Maven, Jenkins, Eclipse, IntelliJ, VS Code, MySQL, and Oracle.</p>
+              <div class="tag-list">
+                <span>GitHub</span><span>Jenkins</span><span>Maven</span><span>Oracle</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cert-section">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p>Recognition</p>
+            <h2>Certifications and appreciation.</h2>
+          </div>
+          <div class="cert-grid">
+            <article>
+              <div class="card-icon"><svg class="icon"><use href="#icon-award"></use></svg></div>
+              <span>Certified</span>
+              <strong>QA Engineer at Backbase India Pvt. Ltd.</strong>
+            </article>
+            <article>
+              <div class="card-icon"><svg class="icon"><use href="#icon-check"></use></svg></div>
+              <span>Client Appreciation</span>
+              <strong>Recognized for fast application understanding as a trainee.</strong>
+            </article>
+            <article>
+              <div class="card-icon"><svg class="icon"><use href="#icon-briefcase"></use></svg></div>
+              <span>Leadership Participation</span>
+              <strong>Appreciated for active involvement in management-level activities.</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section-shell projects-section">
+        <div class="section-heading centered">
+          <p>Featured Projects</p>
+          <h2>Enterprise QA work across insurance, ecommerce, banking, and financial services.</h2>
+        </div>
+        <div class="project-stack">
+          <article class="project-card">
+            <div class="card-icon"><svg class="icon"><use href="#icon-briefcase"></use></svg></div>
+            <div class="project-meta">Banking QA Automation - Oct 2025 to Mar 2026</div>
+            <h3>BDO Philippines Bank</h3>
+            <p>
+              Automated critical banking workflows using Playwright with TypeScript and JavaScript,
+              developed reusable Page Object Model structures, integrated suites into CI/CD, and generated HTML reports.
+            </p>
+            <ul>
+              <li>Automated cross-browser coverage across Chromium, Firefox, and WebKit.</li>
+              <li>Reduced manual regression effort by automating 80% of high-priority scenarios.</li>
+              <li>Collaborated with product and development teams to clarify requirements and close defects.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="card-icon"><svg class="icon"><use href="#icon-release"></use></svg></div>
+            <div class="project-meta">Insurance QA Automation - Apr 2024 to Aug 2025</div>
+            <h3>Zurich Financial Services</h3>
+            <p>
+              Built and executed automation scripts for policy, billing, and claims modules while supporting
+              smoke, sanity, regression, API, and defect lifecycle activities.
+            </p>
+            <ul>
+              <li>Created feature files, scenario outlines, and regression suites for sprint releases.</li>
+              <li>Tracked defects in HP ALM and followed through to closure.</li>
+              <li>Validated APIs with Selenium, Java, and Rest Assured workflows.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="card-icon"><svg class="icon"><use href="#icon-browser"></use></svg></div>
+            <div class="project-meta">Ecommerce QA - Oct 2023 to Apr 2024</div>
+            <h3>MediaMarkt</h3>
+            <p>
+              Designed and maintained web UI test scripts, prepared test cases and status reports,
+              performed SQL-backed verification, and worked directly with clients during user story demos.
+            </p>
+            <ul>
+              <li>Created business-readable Cucumber feature files.</li>
+              <li>Handled multiple-window WebDriver scenarios.</li>
+              <li>Supported agile delivery with functional, API, and regression testing.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="card-icon"><svg class="icon"><use href="#icon-check"></use></svg></div>
+            <div class="project-meta">Health Insurance QA - Jul 2019 to Oct 2023</div>
+            <h3>Hunter Health Insurance</h3>
+            <p>
+              Contributed to BDD Cucumber framework creation, policy module automation, test design,
+              Jira defect reporting, and sprint-based smoke and regression validation.
+            </p>
+            <ul>
+              <li>Wrote acceptance criteria using Gherkin language.</li>
+              <li>Checked code in and out with Git for automation delivery.</li>
+              <li>Uploaded release testing documents and reported automation defects.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="experience-section">
+        <div class="section-shell">
+          <div class="section-heading centered">
+            <p>Professional Experience</p>
+            <h2>A track record of shipping quality across product teams and enterprise clients.</h2>
+          </div>
+          <div class="timeline">
+            <article>
+              <div class="timeline-dot"></div>
+              <div class="card-icon"><svg class="icon"><use href="#icon-briefcase"></use></svg></div>
+              <p>Aug 2025 - Mar 2026</p>
+              <h3>QA Engineer - Backbase Pvt. Ltd.</h3>
+              <span>Hyderabad</span>
+              <ul>
+                <li>Owned Playwright automation for critical banking workflows.</li>
+                <li>Built reusable POM structures and integrated automation with CI/CD execution.</li>
+              </ul>
+            </article>
+            <article>
+              <div class="timeline-dot"></div>
+              <div class="card-icon"><svg class="icon"><use href="#icon-briefcase"></use></svg></div>
+              <p>Jul 2019 - Aug 2025</p>
+              <h3>Sr. Software Test Engineer - Vectramind Technologies Pvt. Ltd.</h3>
+              <span>Hyderabad</span>
+              <ul>
+                <li>Delivered QA for health insurance, ecommerce, and financial services projects.</li>
+                <li>Handled manual testing, Selenium automation, API testing, SQL validation, and defect management.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-shell contact-section">
+        <div class="contact-intro">
+          <p>Let's Connect</p>
+          <h2>Looking for a QA engineer who can protect releases end-to-end?</h2>
+          <span>
+            I am open to opportunities where automation, strong test strategy, and practical defect
+            communication help teams ship with confidence.
+          </span>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card hoverable" href="mailto:likinsahit.d@gmail.com">
+            <div class="card-icon"><svg class="icon"><use href="#icon-mail"></use></svg></div>
+            <small>Email</small>
+            <strong>likinsahit.d@gmail.com</strong>
+            <span>Send a message →</span>
+          </a>
+          <a class="contact-card hoverable" href="tel:+919494209444">
+            <div class="card-icon"><svg class="icon"><use href="#icon-phone"></use></svg></div>
+            <small>Phone</small>
+            <strong>+91 94942 09444</strong>
+            <span>Call directly →</span>
+          </a>
+          <a class="contact-card hoverable" href="assets/likin-sahit-resume.pdf" target="_blank" rel="noreferrer">
+            <div class="card-icon"><svg class="icon"><use href="#icon-file"></use></svg></div>
+            <small>Resume</small>
+            <strong>Download PDF</strong>
+            <span>Open resume →</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 D Likin Sahit. Built for local hosting.</p>
+      <div>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
