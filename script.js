@@ -8,17 +8,41 @@ const cursorRing = document.querySelector(".cursor-ring");
 const particleCanvas = document.querySelector(".particle-field");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-const savedTheme = localStorage.getItem("portfolio-theme");
-if (savedTheme === "dark") {
-  body.classList.add("dark");
-  themeToggle.querySelector("span").textContent = "☀";
+function applyTheme(theme, persist = true) {
+  const isDark = theme === "dark";
+  body.classList.toggle("dark", isDark);
+
+  if (themeToggle) {
+    const toggleIcon = themeToggle.querySelector("span");
+    if (toggleIcon) {
+      toggleIcon.textContent = isDark ? "☀" : "☾";
+    }
+  }
+
+  if (persist) {
+    localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+  }
 }
 
+function getTimeBasedTheme() {
+  const currentHour = new Date().getHours();
+  return currentHour >= 18 || currentHour < 6 ? "dark" : "light";
+}
+
+function initializeTheme() {
+  const savedTheme = localStorage.getItem("portfolio-theme");
+  const themeToApply = savedTheme === "dark" || savedTheme === "light"
+    ? savedTheme
+    : getTimeBasedTheme();
+
+  applyTheme(themeToApply, false);
+}
+
+initializeTheme();
+
 themeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  const isDark = body.classList.contains("dark");
-  themeToggle.querySelector("span").textContent = isDark ? "☀" : "☾";
-  localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+  const isDark = !body.classList.contains("dark");
+  applyTheme(isDark ? "dark" : "light");
 });
 
 menuButton.addEventListener("click", () => {
