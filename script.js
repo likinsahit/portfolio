@@ -38,24 +38,46 @@ function initializeTheme() {
   applyTheme(themeToApply, false);
 }
 
-initializeTheme();
+function initPortfolio() {
+  initializeTheme();
 
-themeToggle.addEventListener("click", () => {
-  const isDark = !body.classList.contains("dark");
-  applyTheme(isDark ? "dark" : "light");
-});
-
-menuButton.addEventListener("click", () => {
-  const isOpen = mobileNav.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", String(isOpen));
-});
-
-mobileNav.addEventListener("click", (event) => {
-  if (event.target.matches("a")) {
-    mobileNav.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const isDark = !body.classList.contains("dark");
+      applyTheme(isDark ? "dark" : "light");
+    });
   }
-});
+
+  if (menuButton) {
+    menuButton.addEventListener("click", () => {
+      const isOpen = mobileNav ? mobileNav.classList.toggle("open") : false;
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
+  if (mobileNav) {
+    mobileNav.addEventListener("click", (event) => {
+      if (event.target.matches("a")) {
+        mobileNav.classList.remove("open");
+        if (menuButton) {
+          menuButton.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+  }
+
+  updateExperience();
+  bootCursor();
+  bootReveal();
+  bootParticles();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initPortfolio);
+} else {
+  initPortfolio();
+}
+
 
 const interactiveSelector = "a, button, .skill-card, .project-card, .contact-card, .about-cards article, .cert-grid article";
 const interactiveElements = [...document.querySelectorAll(interactiveSelector)];
@@ -288,9 +310,4 @@ function updateExperience() {
   }
 }
 
-// Call the experience update function immediately when page loads
-updateExperience();
 
-bootCursor();
-bootReveal();
-bootParticles();
