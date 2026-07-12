@@ -207,6 +207,66 @@ function bootParticles() {
   tick();
 }
 
+// ============================================================================
+// Dynamic Experience Calculator
+// ============================================================================
+// Calculates years and months of experience from July 15, 2019 to today
+// Updates automatically on page load without manual updates required
+
+/**
+ * Calculates total years and months of experience from joining date
+ * @param {Date} joiningDate - The date when employment started
+ * @returns {Object} - Object with years and months properties
+ */
+function calculateExperience(joiningDate) {
+  const today = new Date();
+  let years = today.getFullYear() - joiningDate.getFullYear();
+  let months = today.getMonth() - joiningDate.getMonth();
+
+  // If current day is before the 15th of the month, subtract one month
+  if (today.getDate() < joiningDate.getDate()) {
+    months--;
+  }
+
+  // Handle negative months
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return { years, months };
+}
+
+/**
+ * Updates the experience display across multiple DOM elements
+ * Formats output as "X Years Y Months" with proper singular/plural handling
+ */
+function updateExperience() {
+  // Joining date: July 15, 2019
+  const joiningDate = new Date(2019, 6, 15); // Month is 0-indexed, so 6 = July
+  const { years, months } = calculateExperience(joiningDate);
+
+  // Format with proper singular/plural handling
+  const yearLabel = years === 1 ? "Year" : "Years";
+  const monthLabel = months === 1 ? "Month" : "Months";
+  const experienceText = `${years} ${yearLabel} ${months} ${monthLabel}`;
+
+  // Update hero section experience text
+  const experienceTextElement = document.getElementById("experienceText");
+  if (experienceTextElement) {
+    experienceTextElement.textContent = experienceText;
+  }
+
+  // Update stats grid experience years
+  const experienceYearsElement = document.getElementById("experienceYears");
+  if (experienceYearsElement) {
+    experienceYearsElement.textContent = experienceText;
+  }
+}
+
+// Call the experience update function immediately when page loads
+updateExperience();
+
 bootCursor();
 bootReveal();
 bootParticles();
